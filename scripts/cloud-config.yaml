@@ -1,4 +1,3 @@
-#cloud-config
 users:
   - name: web
     primary_group: web
@@ -6,4 +5,13 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
-      - <public-key>
+      - "<your-ssh-public-key"
+
+
+
+package_reboot_if_required: true
+package_update: true
+package_upgrade: true
+packages:
+  - nginx
+  - nmap
