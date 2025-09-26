@@ -48,7 +48,6 @@ users:
     ssh-authorized-keys:
       - "ssh-ed25519 <SSH Key Sequence> <Key_Name>"
 ```
-
 Once completed, you can add this underneath the yaml file to install the **nginx** and **nmap** packages. 
 This was provided by https://cloudinit.readthedocs.io/en/latest/index.html
 ```bash
@@ -61,11 +60,3 @@ packages:
 ```
 
 
-
-
-
-A randomart will be generated, copy and save in a safe place.
-
-You should see two key files in the .ssh folder (i.e. my_key and my_key.pub)
-
-## Configuring the cloud-init file
