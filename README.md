@@ -39,6 +39,7 @@ sudo nano cloud-config.yaml
 ```
 While editing the cloud-config.yaml, paste in the <ssh_key.pub> content into the designated area: 
 ```bash
+#config-config
 users:
   - name: web
     primary_group: web
