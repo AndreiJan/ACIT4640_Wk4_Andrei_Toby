@@ -12,3 +12,5 @@ A randomart will be generated, copy and save in a safe place.
 
 You should see two key files in the folder (i.e. my_key and my_key.pub)
 Configuring the cloud-init file
+
+test
