@@ -1,3 +1,4 @@
+#cloud-config
 users:
   - name: web
     primary_group: web
@@ -5,9 +6,7 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
-      - "<your-ssh-public-key"
-
-
+      - "ssh-ed25519 <public_ssh-key_sequence> <key_name>"
 
 package_reboot_if_required: true
 package_update: true
