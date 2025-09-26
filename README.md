@@ -60,4 +60,14 @@ packages:
   - nmap
 ```
 
+# Running Terraform
+## Initialize Terraform
+```bash
+terraform fmt
+terraform validate
+terraform init
+```
+
+
+
 
