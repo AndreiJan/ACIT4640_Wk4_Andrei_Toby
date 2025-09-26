@@ -24,9 +24,45 @@ sudo apt update && sudo apt install terraform
 
 ssh-keygen -t ed25519 -C "KEY NAME"
 
-You will be prompted to write a file name where the key will be saved. Write the desired name.
+# Configuring Cloud Config File
+## Clone made Repository and enter the scripts directory 
+```bash
+sudo apt update
+sudo apt-get install git #if you do not have git installed
 
-Following that, you can add a password for the private key, but this is optional.
+#Git repository provided by the professor
+git clone https://gitlab.com/cit_4640/4640-w4-lab-start-w25.git
+
+cd path/to/scripts/cloud-config.yaml
+
+sudo nano cloud-config.yaml
+```
+While editing the cloud-config.yaml, paste in the <ssh_key.pub> content into the designated area: 
+```bash
+users:
+  - name: web
+    primary_group: web
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - "ssh-ed25519 <SSH Key Sequence> <Key_Name>"
+```
+
+Once completed, you can add this underneath the yaml file to install the **nginx** and **nmap** packages. 
+This was provided by https://cloudinit.readthedocs.io/en/latest/index.html
+```bash
+package_reboot_if_required: true
+package_update: true
+package_upgrade: true
+packages:
+  - nginx
+  - nmap
+```
+
+
+
+
 
 A randomart will be generated, copy and save in a safe place.
 
