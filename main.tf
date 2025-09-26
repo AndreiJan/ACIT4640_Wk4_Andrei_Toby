@@ -159,7 +159,7 @@ resource "aws_instance" "web" {
   # set instance type
   instance_type = "t2.micro"
   # add user data for cloud-config file in scripts directory
-  user_data     = file("scripts/cloud_config.yaml")
+  user_data     = file("scripts/cloud-config.yaml")
   # add vpc security group 
   vpc_security_group_ids = [aws_security_group.web.id]
   subnet_id              = aws_subnet.web.id
